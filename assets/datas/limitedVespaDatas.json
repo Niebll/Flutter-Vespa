@@ -14,6 +14,7 @@
     "power": "10.8 kW @ 8,250 rpm",
     "lengthWidth": "1,950 mm / 740 mm",
     "engine": "single cylinder, 4-stroke 4 valves with Start & Stop system",
+    "primaryColor": "#867A73",
     "fiture":{
       "fiturimg1": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Design.jpg",
       "fitur1": "LCD Dashboard",
