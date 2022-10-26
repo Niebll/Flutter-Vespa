@@ -20,7 +20,7 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(241, 241, 241, 5gi,
+      color: Color.fromRGBO(241, 241, 241, 5),
       child: FutureBuilder(
           future: getAllVespaDatas(context),
           builder: (context, data){

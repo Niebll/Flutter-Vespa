@@ -1,5 +1,6 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:vespa/widget/aksesorisList.dart';
 import 'package:vespa/widget/limitedVespaList.dart';
 
 class Homepage extends StatefulWidget {
@@ -100,9 +101,28 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
               ],
             ),
           ),
-          Container(
-            child: Text("asw"),
-          )
+          Padding(
+            padding: const EdgeInsets.only(right: 10, left: 10),
+            child: Row(
+              children: [
+                Text(
+                  "Featured Accesories",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "View More",
+                  style: TextStyle(
+                    color: Colors.grey
+                  ),
+                )
+              ],
+            ),
+          ),
+          AksesorisList()
         ],
       ),
     );
