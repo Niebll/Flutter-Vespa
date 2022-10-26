@@ -101,7 +101,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
             ),
           ),
           Container(
-            child: Text("add collab ulang aojaokakwokoaokowa"),
+            child: Text("add collab ulang aojaokakwokoaokowa lagi"),
           )
         ],
       ),
