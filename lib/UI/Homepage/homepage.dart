@@ -60,7 +60,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Color.fromRGBO(86,194,159, 100))),
                     child: Text(
-                      'Disektiarmu',
+                      'GTS',
                       style: TextStyle(fontSize: 14, fontFamily: 'OpenSans'),
                     ),
                   ),
@@ -70,7 +70,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Color.fromRGBO(86,194,159, 100))),
                     child: Text(
-                      'Disektiarmu',
+                      'Sprint',
                       style: TextStyle(fontSize: 14, fontFamily: 'OpenSans'),
                     ),
                   ),
@@ -80,7 +80,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(color: Color.fromRGBO(86,194,159, 100))),
                     child: Text(
-                      'Disektiarmu',
+                      'Primavera',
                       style: TextStyle(fontSize: 14, fontFamily: 'OpenSans'),
                     ),
                   ),
