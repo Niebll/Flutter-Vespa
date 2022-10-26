@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:vespa/Model/allVespaModel.dart';
 import 'package:vespa/widget/limitedVespaList.dart';
 
 class Homepage extends StatefulWidget {
@@ -13,12 +10,6 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
-  Future<List> getAllVespaDatas(BuildContext context) async{
-    String jsonString = await DefaultAssetBundle.of(context).loadString("assets/datas/allVespaDatas.json");
-    List<dynamic> raw = jsonDecode(jsonString);
-    return raw.map((f) => Vespas.fromJson(f)).toList();
-  }
-
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
