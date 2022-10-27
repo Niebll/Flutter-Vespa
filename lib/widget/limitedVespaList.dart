@@ -47,7 +47,6 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
-
                                   width: MediaQuery.of(context).size.width,
                                 child: Stack(
                                   children: [
