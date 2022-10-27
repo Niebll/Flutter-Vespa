@@ -14,7 +14,7 @@
     "power": "10.8 kW @ 8,250 rpm",
     "lengthWidth": "1,950 mm / 740 mm",
     "engine": "single cylinder, 4-stroke 4 valves with Start & Stop system",
-    "primaryColor": "#867A73",
+    "primaryColor": "7D766F",
     "fiture":{
       "fiturimg1": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Design.jpg",
       "fitur1": "LCD Dashboard",
@@ -43,6 +43,7 @@
     "power": "17 kW @ 8,500 rpm",
     "lengthWidth": "1,950 mm / 770 mm",
     "engine": "HPE, 4 valves, 4 stroke, single cylinder, SOHC (Single Overhead Camshaft)",
+    "primaryColor": "3D3E40",
     "fiture":{
       "fiturimg1": "https://vespa.co.id/assets/img/vespa-gtv/features_analogue%20_speedometer.jpg",
       "fitur1": "Analogue Speedometer On White Background With Elegant Bronze Top Fairing",
@@ -72,6 +73,7 @@
     "power": "8.7 kW @ 7,500 rpm",
     "lengthWidth": "1,863 mm / 695 mm",
     "engine": "single cylinder, 4 strokes, 3 valves",
+    "primaryColor": "26384D",
     "fiture":{
       "fiturimg1": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/TFT-Dashboard.jpg",
       "fitur1": "TFT dashboard",

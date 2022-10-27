@@ -19,6 +19,8 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
     return raw.map((f) => Vespas.fromJson(f)).toList();
   }
 
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -59,7 +61,7 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
                                             height: 115,
                                             decoration: BoxDecoration(
                                               borderRadius: BorderRadius.circular(20),
-                                              color: Colors.amber,
+                                              color: HexColor(vespas[index].primaryColor!),
                                             ),
                                           ),
                                           Container(
@@ -106,4 +108,16 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
           }),
     );
   }
+}
+
+class HexColor extends Color {
+  static int _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    return int.parse(hexColor, radix: 16);
+  }
+
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
