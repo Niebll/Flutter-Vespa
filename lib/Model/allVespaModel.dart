@@ -13,6 +13,7 @@ class Vespas {
   String? power;
   String? lengthWidth;
   String? engine;
+  String? primaryColor;
   Fiture? fiture;
 
   Vespas(
@@ -30,6 +31,7 @@ class Vespas {
         this.power,
         this.lengthWidth,
         this.engine,
+        this.primaryColor,
         this.fiture});
 
   Vespas.fromJson(Map<String, dynamic> json) {
@@ -47,6 +49,7 @@ class Vespas {
     power = json['power'];
     lengthWidth = json['lengthWidth'];
     engine = json['engine'];
+    primaryColor = json['primaryColor'];
     fiture =
     json['fiture'] != null ? new Fiture.fromJson(json['fiture']) : null;
   }
@@ -67,6 +70,7 @@ class Vespas {
     data['power'] = this.power;
     data['lengthWidth'] = this.lengthWidth;
     data['engine'] = this.engine;
+    data['primaryColor'] = this.primaryColor;
     if (this.fiture != null) {
       data['fiture'] = this.fiture!.toJson();
     }
@@ -75,8 +79,8 @@ class Vespas {
 }
 
 class Fiture {
-  String? fiturimg;
-  String? fitu1;
+  String? fiturimg1;
+  String? fitur1;
   String? fiturimg2;
   String? fitur2;
   String? fiturimg3;
@@ -87,8 +91,8 @@ class Fiture {
   String? fitur5;
 
   Fiture(
-      {this.fiturimg,
-        this.fitu1,
+      {this.fiturimg1,
+        this.fitur1,
         this.fiturimg2,
         this.fitur2,
         this.fiturimg3,
@@ -99,8 +103,8 @@ class Fiture {
         this.fitur5});
 
   Fiture.fromJson(Map<String, dynamic> json) {
-    fiturimg = json['fiturimg'];
-    fitu1 = json['fitu1'];
+    fiturimg1 = json['fiturimg1'];
+    fitur1 = json['fitur1'];
     fiturimg2 = json['fiturimg2'];
     fitur2 = json['fitur2'];
     fiturimg3 = json['fiturimg3'];
@@ -113,8 +117,8 @@ class Fiture {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['fiturimg'] = this.fiturimg;
-    data['fitu1'] = this.fitu1;
+    data['fiturimg1'] = this.fiturimg1;
+    data['fitur1'] = this.fitur1;
     data['fiturimg2'] = this.fiturimg2;
     data['fitur2'] = this.fitur2;
     data['fiturimg3'] = this.fiturimg3;

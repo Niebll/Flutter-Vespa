@@ -28,9 +28,9 @@ class _AksesorisListState extends State<AksesorisList> {
           if(data.hasData){
             List<Aksesoris> aksesoris = data.data as List<Aksesoris>;
             return ListView.builder(
-              scrollDirection: Axis.vertical,
                 shrinkWrap: true,
-                itemCount: 2,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: 3,
                 itemBuilder: (context, index){
                   return InkWell(
                     onTap: () {

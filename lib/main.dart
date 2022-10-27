@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
+import 'package:vespa/UI/SplashScreen/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homepage(),
+      home: SplashScreen(),
     );
   }
 }
