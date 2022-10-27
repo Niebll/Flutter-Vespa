@@ -121,3 +121,5 @@ class HexColor extends Color {
 
   HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
+
+//ini mau merge
