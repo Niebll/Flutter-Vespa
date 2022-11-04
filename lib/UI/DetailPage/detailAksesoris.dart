@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:vespa/Model/aksesorisModel.dart';
+
+import '../../widget/panelWidget.dart';
 
 class AksesorisDetail extends StatefulWidget {
   AksesorisDetail({Key? key, required this.aksesoris}) : super(key: key);
@@ -13,70 +15,107 @@ class AksesorisDetail extends StatefulWidget {
 class _AksesorisDetailState extends State<AksesorisDetail> {
   @override
   Widget build(BuildContext context) {
+    final paneHeightClosed = MediaQuery.of(context).size.height * 0.5;
     return Scaffold(
-      backgroundColor: Color.fromRGBO(109, 203, 176, 1),
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      //   elevation: 0.0,
-      //   leading: IconButton(
-      //     onPressed: () => Navigator.of(context).pop(),
-      //     icon: Icon(Icons.arrow_back_ios),
-      //   )
-      // ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: EdgeInsets.only(top: 20),
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(Icons.arrow_back_ios),
-                    color: Colors.white,
-                  ),
-                  Spacer(),
-                  IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.add_shopping_cart),
-                    color: Colors.white,
-                  )
-                ],
-              )
-            ),
-            ListView(
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              children: <Widget> [
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [SlidingUpPanel(
+          minHeight: paneHeightClosed,
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
                 Container(
-                  child: Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(100),
-                        child: Image.network(
-                          widget.aksesoris.img.toString(),
-                          width: 200,
-                          height: 200,
+                    padding: EdgeInsets.only(top: 20),
+                    child: Row(
+                      children: [
+                        IconButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          icon: Icon(Icons.arrow_back_ios),
+                          color: Color.fromRGBO(109, 203, 176, 1),
                         ),
+                        Spacer(),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.add_shopping_cart),
+                          color: Color.fromRGBO(109, 203, 176, 1),
+                        )
+                      ],
+                    )
+                ),
+                ListView(
+                  padding: EdgeInsets.zero,
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  children: <Widget> [
+                    Container(
+                      child: Column(
+                        children: [
+                          Image.network(
+                            widget.aksesoris.img.toString(),
+                            width: 190,
+                            height: 190,
+                          ),
+                        ],
                       ),
-                      Container(
-                        color: Colors.white,
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.57,
-                        child: Column(
-                          children: [
-                            Text(widget.aksesoris.name.toString()),
-
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                )
+                    )
+                  ],
+                ),
               ],
             ),
-          ],
+          ),
+          panelBuilder: (controller) => PanelWidget(
+              controller: controller,
+              aksesoris: widget.aksesoris
+          ),
         ),
+        Positioned(
+          bottom: 1,
+          child: Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width / 2,
+                height: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(30)),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "\$" + widget.aksesoris.harga.toString(),
+                      style: TextStyle(
+                          fontSize: 32,
+                          color: Color(0xffF88D11)
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width / 2,
+                height: 80,
+                color: Color.fromRGBO(109, 203, 176, 1),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Buy Now",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontStyle: FontStyle.italic,
+                          color: Colors.white
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        )
+        ]
       ),
     );
   }

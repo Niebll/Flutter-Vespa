@@ -58,18 +58,21 @@ class _AksesorisListState extends State<AksesorisList> {
                               height: 60,
                             ),
                           ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Padding(
-                               padding: const EdgeInsets.only(bottom: 10),
-                               child: Text(
-                                 aksesoris[index].name.toString(),
-                                 style: TextStyle(fontWeight: FontWeight.bold),
-                               ),
-                             ),
-                             Text('\$${aksesoris[index].harga.toString()}'),
-                           ],
+                          Container(
+                            width: MediaQuery.of(context).size.width / 1.75,
+                            child:  Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Text(
+                                    aksesoris[index].name.toString(),
+                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                Text('\$${aksesoris[index].harga.toString()}'),
+                              ],
+                            ),
                           ),
                           Spacer(),
                           Icon(Icons.favorite_border)
