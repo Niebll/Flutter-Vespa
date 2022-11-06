@@ -38,6 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   bubble_tab_indicator:
   flutter_image_slideshow: ^0.1.4
+  google_fonts:
+  animated_splash_screen:
 
 dev_dependencies:
   flutter_test:

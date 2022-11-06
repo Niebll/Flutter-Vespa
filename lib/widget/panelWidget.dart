@@ -132,7 +132,7 @@ class RadioItem extends StatelessWidget {
               border: Border.all(
                   width: 1.0,
                   color: _item.isSelected
-                      ? Colors.grey
+                      ? Colors.white
                       : Colors.white),
 
                 borderRadius: BorderRadius.circular(10)

@@ -1,132 +1,141 @@
+// To parse this JSON data, do
+//
+//     final vespas = vespasFromJson(jsonString);
+
+import 'dart:convert';
+
+Vespas vespasFromJson(String str) => Vespas.fromJson(json.decode(str));
+
+String vespasToJson(Vespas data) => json.encode(data.toJson());
+
 class Vespas {
-  String? tipe;
-  String? name;
-  int? cc;
-  int? harga;
-  String? imgthumbnail;
-  String? img;
-  String? img2;
-  String? img3;
-  String? tagline;
-  String? judulDescription;
-  String? descripstion;
-  String? power;
-  String? lengthWidth;
-  String? engine;
-  String? primaryColor;
-  Fiture? fiture;
+    Vespas({
+        required this.all,
+        required this.limited,
+        required this.gts,
+        required this.sprint,
+        required this.primavera,
+    });
 
-  Vespas(
-      {this.tipe,
-        this.name,
-        this.cc,
-        this.harga,
-        this.imgthumbnail,
-        this.img,
-        this.img2,
-        this.img3,
-        this.tagline,
-        this.judulDescription,
-        this.descripstion,
-        this.power,
-        this.lengthWidth,
-        this.engine,
-        this.primaryColor,
-        this.fiture});
+    List<All> all;
+    List<All> limited;
+    List<All> gts;
+    List<All> sprint;
+    List<All> primavera;
 
-  Vespas.fromJson(Map<String, dynamic> json) {
-    tipe = json['tipe'];
-    name = json['name'];
-    cc = json['cc'];
-    harga = json['harga'];
-    imgthumbnail = json['imgthumbnail'];
-    img = json['img'];
-    img2 = json['img2'];
-    img3 = json['img3'];
-    tagline = json['tagline'];
-    judulDescription = json['judul_description'];
-    descripstion = json['descripstion'];
-    power = json['power'];
-    lengthWidth = json['lengthWidth'];
-    engine = json['engine'];
-    primaryColor = json['primaryColor'];
-    fiture =
-    json['fiture'] != null ? new Fiture.fromJson(json['fiture']) : null;
-  }
+    factory Vespas.fromJson(Map<String, dynamic> json) => Vespas(
+        all: List<All>.from(json["all"].map((x) => All.fromJson(x))),
+        limited: List<All>.from(json["limited"].map((x) => All.fromJson(x))),
+        gts: List<All>.from(json["gts"].map((x) => All.fromJson(x))),
+        sprint: List<All>.from(json["sprint"].map((x) => All.fromJson(x))),
+        primavera: List<All>.from(json["primavera"].map((x) => All.fromJson(x))),
+    );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['tipe'] = this.tipe;
-    data['name'] = this.name;
-    data['cc'] = this.cc;
-    data['harga'] = this.harga;
-    data['imgthumbnail'] = this.imgthumbnail;
-    data['img'] = this.img;
-    data['img2'] = this.img2;
-    data['img3'] = this.img3;
-    data['tagline'] = this.tagline;
-    data['judul_description'] = this.judulDescription;
-    data['descripstion'] = this.descripstion;
-    data['power'] = this.power;
-    data['lengthWidth'] = this.lengthWidth;
-    data['engine'] = this.engine;
-    data['primaryColor'] = this.primaryColor;
-    if (this.fiture != null) {
-      data['fiture'] = this.fiture!.toJson();
-    }
-    return data;
-  }
+    Map<String, dynamic> toJson() => {
+        "all": List<dynamic>.from(all.map((x) => x.toJson())),
+        "limited": List<dynamic>.from(limited.map((x) => x.toJson())),
+        "gts": List<dynamic>.from(gts.map((x) => x.toJson())),
+        "sprint": List<dynamic>.from(sprint.map((x) => x.toJson())),
+        "primavera": List<dynamic>.from(primavera.map((x) => x.toJson())),
+    };
+}
+
+class All {
+    All({
+        required this.tipe,
+        required this.name,
+        required this.cc,
+        required this.harga,
+        required this.imgthumbnail,
+        required this.img,
+        required this.img2,
+        required this.img3,
+        required this.tagline,
+        required this.judulDescription,
+        required this.descripstion,
+        required this.power,
+        required this.lengthWidth,
+        required this.engine,
+        required this.primarycolor,
+        required this.fiture,
+    });
+
+    String tipe;
+    String name;
+    int cc;
+    int harga;
+    String imgthumbnail;
+    String img;
+    String img2;
+    String img3;
+    String tagline;
+    String judulDescription;
+    String descripstion;
+    String power;
+    String lengthWidth;
+    String engine;
+    String primarycolor;
+    List<Fiture> fiture;
+
+    factory All.fromJson(Map<String, dynamic> json) => All(
+        tipe: json["tipe"],
+        name: json["name"],
+        cc: json["cc"],
+        harga: json["harga"],
+        imgthumbnail: json["imgthumbnail"],
+        img: json["img"],
+        img2: json["img2"],
+        img3: json["img3"],
+        tagline: json["tagline"],
+        judulDescription: json["judul_description"],
+        descripstion: json["descripstion"],
+        power: json["power"],
+        lengthWidth: json["lengthWidth"],
+        engine: json["engine"],
+        primarycolor: json["primarycolor"],
+        fiture: List<Fiture>.from(json["fiture"].map((x) => Fiture.fromJson(x))),
+    );
+
+    Map<String, dynamic> toJson() => {
+        "tipe": tipe,
+        "name": name,
+        "cc": cc,
+        "harga": harga,
+        "imgthumbnail": imgthumbnail,
+        "img": img,
+        "img2": img2,
+        "img3": img3,
+        "tagline": tagline,
+        "judul_description": judulDescription,
+        "descripstion": descripstion,
+        "power": power,
+        "lengthWidth": lengthWidth,
+        "engine": engine,
+        "primarycolor": primarycolor,
+        "fiture": List<dynamic>.from(fiture.map((x) => x.toJson())),
+    };
 }
 
 class Fiture {
-  String? fiturimg1;
-  String? fitur1;
-  String? fiturimg2;
-  String? fitur2;
-  String? fiturimg3;
-  String? fitur3;
-  String? fiturimg4;
-  String? fitur4;
-  String? fiturimg5;
-  String? fitur5;
+    Fiture({
+        required this.fiturimg,
+        required this.fitur,
+    });
 
-  Fiture(
-      {this.fiturimg1,
-        this.fitur1,
-        this.fiturimg2,
-        this.fitur2,
-        this.fiturimg3,
-        this.fitur3,
-        this.fiturimg4,
-        this.fitur4,
-        this.fiturimg5,
-        this.fitur5});
+    String fiturimg;
+    String fitur;
 
-  Fiture.fromJson(Map<String, dynamic> json) {
-    fiturimg1 = json['fiturimg1'];
-    fitur1 = json['fitur1'];
-    fiturimg2 = json['fiturimg2'];
-    fitur2 = json['fitur2'];
-    fiturimg3 = json['fiturimg3'];
-    fitur3 = json['fitur3'];
-    fiturimg4 = json['fiturimg4'];
-    fitur4 = json['fitur4'];
-    fiturimg5 = json['fiturimg5'];
-    fitur5 = json['fitur5'];
-  }
+    factory Fiture.fromJson(Map<String, dynamic> json) => Fiture(
+        fiturimg: json["fiturimg"],
+        fitur: json["fitur"],
+    );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['fiturimg1'] = this.fiturimg1;
-    data['fitur1'] = this.fitur1;
-    data['fiturimg2'] = this.fiturimg2;
-    data['fitur2'] = this.fitur2;
-    data['fiturimg3'] = this.fiturimg3;
-    data['fitur3'] = this.fitur3;
-    data['fiturimg4'] = this.fiturimg4;
-    data['fitur4'] = this.fitur4;
-    data['fiturimg5'] = this.fiturimg5;
-    data['fitur5'] = this.fitur5;
-    return data;
-  }
+    Map<String, dynamic> toJson() => {
+        "fiturimg": fiturimg,
+        "fitur": fitur,
+    };
 }
+
+
+
+
