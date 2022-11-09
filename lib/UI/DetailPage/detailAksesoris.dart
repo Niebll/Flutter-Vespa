@@ -20,7 +20,8 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
-          children: [SlidingUpPanel(
+          children: [
+            SlidingUpPanel(
             minHeight: paneHeightClosed,
             body: SingleChildScrollView(
               child: Column(
@@ -69,44 +70,55 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: 7,
             child: Row(
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(30)),
-                    color: Color.fromRGBO(109, 203, 176, 1),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "\$" + widget.aksesoris.harga.toString(),
-                      style: TextStyle(
-                          fontSize: 32,
-                          // color: Color(0xffF88D11)
-                        color: Colors.white
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 10.0, right: 10),
+                  child: Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: Icon(Icons.shop_outlined,)
                     ),
                   ),
                 ),
                 Container(
-                  width: MediaQuery.of(context).size.width  ,
-                  height: 80,
+                  width: 260  ,
+                  height: 60 ,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(30)),
-                    color: Colors.black
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color(0xff16537E)
                   ),
-                    child: Center(
-                    child: Text(
-                      "Buy Now",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontStyle: FontStyle.italic,
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 20,),
+                        Text("£ ${widget.aksesoris.harga.toString()}.00", style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
                           color: Colors.white
-                      ),
+                        ),),
+                        Spacer(),
+                        Text("|", style: TextStyle(
+                          fontSize: 18
+                        ),),
+                        Spacer(),
+                        Text(
+                          "Buy Now",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white
+
+                          ),
+                        ),
+                        SizedBox(width: 20,)
+                      ],
                     ),
-                  ),
                 ),
               ],
             ),

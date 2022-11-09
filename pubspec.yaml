@@ -40,6 +40,8 @@ dependencies:
   flutter_image_slideshow: ^0.1.4
   google_fonts:
   animated_splash_screen:
+  flutter_typeahead: ^4.1.1
+
 
 dev_dependencies:
   flutter_test:
@@ -69,6 +71,12 @@ flutter:
     - assets/datas/limitedVespaDatas.json
     - assets/datas/aksesorisDatas.json
     - assets/images/vespa_logo.jpg
+    - assets/images/account.png
+    - assets/images/vespa_start1.jpg
+    - assets/images/vespa_start2.jpg
+    - assets/images/vespa_start3.jpg
+    - assets/images/vespa_start4.jpg
+    - assets/images/vespa_logo_putih.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

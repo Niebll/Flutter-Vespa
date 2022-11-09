@@ -12,42 +12,47 @@ class AksesorisList extends StatefulWidget {
 }
 
 class _AksesorisListState extends State<AksesorisList> {
-
   // String dollar = "$";
 
-  Future<List> getAksesorisList(BuildContext context) async{
-    String jsonString = await DefaultAssetBundle.of(context).loadString("assets/datas/aksesorisDatas.json");
+  Future<List> getAksesorisList(BuildContext context) async {
+    String jsonString = await DefaultAssetBundle.of(context)
+        .loadString("assets/datas/aksesorisDatas.json");
     List<dynamic> raw = jsonDecode(jsonString);
     return raw.map((f) => Aksesoris.fromJson(f)).toList();
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: getAksesorisList(context),
-        builder: (context, data){
-          if(data.hasData){
+        builder: (context, data) {
+          if (data.hasData) {
             List<Aksesoris> aksesoris = data.data as List<Aksesoris>;
             return ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemCount: 3,
-                itemBuilder: (context, index){
+                itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(
-                              builder: (context) {
-                                return AksesorisDetail(aksesoris: aksesoris[index]);
-                              })
-                      );
+                          MaterialPageRoute(builder: (context) {
+                        return AksesorisDetail(aksesoris: aksesoris[index]);
+                      }));
                     },
                     child: Container(
                       padding: EdgeInsets.all(10),
                       margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(20)
-                      ),
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.5),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                            )
+                          ]),
                       child: Row(
                         children: [
                           Padding(
@@ -60,14 +65,15 @@ class _AksesorisListState extends State<AksesorisList> {
                           ),
                           Container(
                             width: MediaQuery.of(context).size.width / 1.75,
-                            child:  Column(
+                            child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 10),
                                   child: Text(
                                     aksesoris[index].name.toString(),
-                                    style: TextStyle(fontWeight: FontWeight.bold),
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
                                 Text('\$${aksesoris[index].harga.toString()}'),
@@ -80,12 +86,12 @@ class _AksesorisListState extends State<AksesorisList> {
                       ),
                     ),
                   );
-                }
+                });
+          } else {
+            return Center(
+              child: CircularProgressIndicator(),
             );
-          }else{
-            return Center(child: CircularProgressIndicator(),);
           }
-        }
-    );
+        });
   }
 }
