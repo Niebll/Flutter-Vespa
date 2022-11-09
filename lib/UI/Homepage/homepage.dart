@@ -1,7 +1,9 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/widget/aksesorisList.dart';
 import 'package:vespa/widget/limitedVespaList.dart';
+import 'package:vespa/widget/navigationDrawer.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -16,7 +18,23 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
     TabController _tabController = TabController(length: 4, vsync: this);
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(241, 241, 241, 5),
+      drawer: NavigationDrawer(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Colors.black
+        ),
+        shadowColor: Colors.transparent,
+        backgroundColor: Colors.white,
+        actions: [
+          Image.asset("assets/images/vespa_logo.jpg")
+        ],
+        title: Text("Welcome",style: GoogleFonts.bebasNeue(
+          letterSpacing: 5,
+          color: Colors.black
+        ),),
+        centerTitle: true,
+      ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: [

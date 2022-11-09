@@ -69,6 +69,11 @@ flutter:
     - assets/datas/limitedVespaDatas.json
     - assets/datas/aksesorisDatas.json
     - assets/images/vespa_logo.jpg
+    - assets/images/vespa_start1.jpg
+    - assets/images/vespa_start2.jpg
+    - assets/images/vespa_start3.jpg
+    - assets/images/vespa_start4.jpg
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
