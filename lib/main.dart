@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vespa/UI/Catalogue/catalogueVespa.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
 import 'package:vespa/UI/IntroPage/loginPage.dart';
 import 'package:vespa/UI/IntroPage/startPage.dart';
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Homepage()
+      home: CatalogueVespa()
     );
   }
 }
