@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:vespa/UI/DetailPage/detailVespasLimited.dart';
-import '../Model/allVespaModel.dart';
 import 'package:intl/intl.dart';
+import 'package:vespa/UI/DetailPage/detailVespasLimited.dart';
+import 'package:vespa/UI/DetailPage/detailVespasSprint.dart';
 
-import 'HexColor.dart';
+import '../Model/allVespaModel.dart';
 
-
-class LimitedVespaList extends StatefulWidget {
-  const LimitedVespaList({Key? key}) : super(key: key);
+class SprintVespasList extends StatefulWidget {
+  const SprintVespasList({Key? key}) : super(key: key);
 
   @override
-  State<LimitedVespaList> createState() => _LimitedVespaListState();
+  State<SprintVespasList> createState() => _SprintVespasList();
 }
 
-class _LimitedVespaListState extends State<LimitedVespaList> {
+class _SprintVespasList extends State<SprintVespasList> {
   Future<Vespas> getAllVespaDatas(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context)
         .loadString("assets/datas/allVespaDatas.json");
     return vespasFromJson(jsonString);
   }
-  final oCcy = new NumberFormat("#,##0.00", "en_US");
-
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +27,17 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
           if (vespas.hasData) {
             return ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: vespas.data?.limited.length,
+                itemCount: vespas.data?.sprint.length,
                 itemBuilder: (context, index) {
                   return InkWell(
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return DetailVespaLimited(
-                          vespas: vespas.data!,
-                          index: index,
-                        );
-                      }));
+                            return DetailVespaSprint(
+                              vespas: vespas.data!,
+                              index: index,
+                            );
+                          }));
                     },
                     child: Container(
                       decoration: BoxDecoration(
@@ -73,17 +70,17 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
                                           height: 115,
                                           decoration: BoxDecoration(
                                             borderRadius:
-                                                BorderRadius.circular(20),
+                                            BorderRadius.circular(20),
                                             color: HexColor(vespas.data!
-                                                .limited[index].primarycolor),
+                                                .sprint[index].primarycolor),
                                           ),
                                         ),
                                         Container(
                                           width:
-                                              MediaQuery.of(context).size.width,
+                                          MediaQuery.of(context).size.width,
                                           height: 160,
                                           child: Image.network(vespas
-                                              .data!.limited[index].imgthumbnail
+                                              .data!.sprint[index].imgthumbnail
                                               .toString()),
                                         )
                                       ],
@@ -91,7 +88,7 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
                                   ),
                                   Container(
                                     padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
+                                    EdgeInsets.symmetric(horizontal: 5),
                                     child: Column(
                                       children: [
                                         SizedBox(
@@ -99,18 +96,18 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
                                         ),
                                         Container(
                                           width:
-                                              MediaQuery.of(context).size.width,
+                                          MediaQuery.of(context).size.width,
                                           height: 70,
                                           padding: const EdgeInsets.all(10.0),
                                           child: Text(
-                                            vespas.data!.limited[index].name
+                                            vespas.data!.sprint[index].name
                                                 .toString(),
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold),
                                           ),
                                         ),
                                         Text(
-                                          NumberFormat.simpleCurrency(locale: "EUR", decimalDigits: 0).format(vespas.data!.limited[index].harga),
+                                          NumberFormat.simpleCurrency(locale: "EUR", decimalDigits: 0).format(vespas.data!.sprint[index].harga),
                                         ),
                                       ],
                                     ),
@@ -133,4 +130,14 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
   }
 }
 
+class HexColor extends Color {
+  static int _getColorFromHex(String hexColor) {
+    hexColor = hexColor.toUpperCase().replaceAll("#", "");
+    if (hexColor.length == 6) {
+      hexColor = "FF" + hexColor;
+    }
+    return int.parse(hexColor, radix: 16);
+  }
 
+  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
+}

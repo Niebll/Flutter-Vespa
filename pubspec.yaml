@@ -41,7 +41,8 @@ dependencies:
   google_fonts:
   animated_splash_screen:
   flutter_typeahead: ^4.1.1
-
+  intl:
+  iconify_flutter:
 
 dev_dependencies:
   flutter_test:

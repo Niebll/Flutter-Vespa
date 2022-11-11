@@ -23,13 +23,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               icon: Icons.home_outlined,
               size: 20,
               text: "Home",
-              onClicked: () => 1,
+              onClicked: () => 0,
             ),
             ExpansionTile(
              leading: Icon(Icons.card_travel),
               title: Text("Catalogue"),children: [
                 MenuItem(text: "Vespa", icon: Icons.electric_scooter_sharp, size: 20,
-                  onClicked: () => 1
+                  onClicked: () => SelectedItem(context, int, 1)
                 ),
               MenuItem(text: "Accesories", icon: Icons.headphones, size: 20)
             ],
@@ -61,6 +61,7 @@ Widget MenuItem(
 }
 
   void SelectedItem(BuildContext context, int, index){
+  Navigator.pop(context);
   switch (index) {
     case 0:
       Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Homepage()));
