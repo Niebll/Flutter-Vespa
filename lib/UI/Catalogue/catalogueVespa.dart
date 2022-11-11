@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/Model/allVespaModel.dart';
-import 'package:vespa/UI/DetailPage/detailVespas.dart';
+import 'package:vespa/UI/DetailPage/detailVespaAll.dart';
 import 'package:vespa/widget/navigationDrawer.dart';
 
 class CatalogueVespa extends StatefulWidget {
@@ -56,7 +56,7 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailVespa(
+                                return DetailVespaAll(
                                   vespas: vespas.data!,
                                   index: index,
                                 );
