@@ -80,8 +80,6 @@ class _AksesorisListState extends State<AksesorisList> {
                               ],
                             ),
                           ),
-                          Spacer(),
-                          Icon(Icons.favorite_border)
                         ],
                       ),
                     ),

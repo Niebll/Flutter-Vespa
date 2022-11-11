@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:vespa/Model/aksesorisModel.dart';
 
-import '../../widget/panelWidget.dart';
+import '../../widget/panelWidgetAksesoris.dart';
 
 class AksesorisDetail extends StatefulWidget {
   AksesorisDetail({Key? key, required this.aksesoris}) : super(key: key);
@@ -16,6 +16,7 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
   @override
   Widget build(BuildContext context) {
     final paneHeightClosed = MediaQuery.of(context).size.height * 0.5;
+    final paneHeightOpen = MediaQuery.of(context).size.height * 0.55;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -23,6 +24,10 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
           children: [
             SlidingUpPanel(
             minHeight: paneHeightClosed,
+            maxHeight: paneHeightOpen,
+            boxShadow: [BoxShadow(
+              color: Colors.white
+            )],
             body: SingleChildScrollView(
               child: Column(
                 children: [
