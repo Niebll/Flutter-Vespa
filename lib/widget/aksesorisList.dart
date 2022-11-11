@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:vespa/Model/aksesorisModel.dart';
 import 'package:vespa/UI/DetailPage/detailAksesoris.dart';
 
@@ -76,7 +77,7 @@ class _AksesorisListState extends State<AksesorisList> {
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                Text('\$${aksesoris[index].harga.toString()}'),
+                                Text(NumberFormat.simpleCurrency(locale: "EUR", decimalDigits: 0).format(aksesoris[index].harga)),
                               ],
                             ),
                           ),

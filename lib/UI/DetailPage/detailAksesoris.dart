@@ -85,10 +85,10 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                     height: 60,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                     child: Center(
-                      child: Icon(Icons.shop_outlined,)
+                      child: Icon(Icons.shop_outlined, color: Colors.white,)
                     ),
                   ),
                 ),
@@ -97,7 +97,7 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                   height: 60 ,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xff16537E)
+                    color: Colors.white
                   ),
                     child: Row(
                       // mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +106,6 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                         Text("£ ${widget.aksesoris.harga.toString()}.00", style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 22,
-                          color: Colors.white
                         ),),
                         Spacer(),
                         Text("|", style: TextStyle(
@@ -117,8 +116,6 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                           "Buy Now",
                           style: TextStyle(
                               fontSize: 20,
-                              color: Colors.white
-
                           ),
                         ),
                         SizedBox(width: 20,)
