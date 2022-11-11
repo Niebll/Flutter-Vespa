@@ -11,6 +11,7 @@ class LimitedVespaList extends StatefulWidget {
 }
 
 class _LimitedVespaListState extends State<LimitedVespaList> {
+
   Future<Vespas> getAllVespaDatas(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context)
         .loadString("assets/datas/allVespaDatas.json");
@@ -124,7 +125,8 @@ class _LimitedVespaListState extends State<LimitedVespaList> {
               child: CircularProgressIndicator(),
             );
           }
-        });
+        }
+        );
   }
 }
 
