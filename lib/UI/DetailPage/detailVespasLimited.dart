@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:vespa/Model/allVespaModel.dart';
+import 'package:vespa/Sqflite/cart_vespa.dart';
+import 'package:vespa/Sqflite/database_helper.dart';
 import 'package:vespa/widget/HexColor.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/nimbus.dart';
@@ -21,9 +23,41 @@ class DetailVespaLimited extends StatefulWidget {
 }
 
 class _DetailVespaLimited extends State<DetailVespaLimited> {
+  bool checkExist = false;
+
+  Future read() async {
+    checkExist = await VespaDatabase.instance.read(widget.vespas.limited[widget.index].name.toString());
+    setState(() {});
+  }
+
+  Future addData() async {
+    var list;
+    list = VespaCart(
+        title: widget.vespas.limited[widget.index].name.toString(),
+        imgthumbnail: widget.vespas.limited[widget.index].imgthumbnail.toString());
+    await VespaDatabase.instance.create(list);
+    setState(() {
+      checkExist = true;
+    });
+  }
+
+  Future deleteData() async {
+    await VespaDatabase.instance.delete(widget.vespas.limited[widget.index].name.toString());
+    setState(() {
+      checkExist = false;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    read();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final paneHeightClosed = MediaQuery.of(context).size.height * 0.425;
+    final paneHeightClosed = MediaQuery.of(context).size.height * 0.55;
     final paneHeightOpen = MediaQuery.of(context).size.height * 1;
     return Scaffold(
         body: SafeArea(
@@ -35,12 +69,23 @@ class _DetailVespaLimited extends State<DetailVespaLimited> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                  child: IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: Icon(Icons.arrow_back_ios),
-                color: Color.fromRGBO(109, 203, 176, 1),
-              )),
+              Row(
+                children: [
+                  IconButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    icon: Icon(Icons.arrow_back_ios),
+                    color: Color.fromRGBO(109, 203, 176, 1),
+                  ),
+                  IconButton(onPressed: () {
+                    checkExist ? deleteData() : addData();
+                  },
+                    icon: Icon(Icons.shopping_cart),
+                    color: checkExist
+                        ? Colors.red
+                        : Colors.grey,
+                  )
+                ],
+              ),
               Container(
                 color: HexColor(widget.vespas.limited[widget.index].primarycolor.toString()),
                 child: Center(

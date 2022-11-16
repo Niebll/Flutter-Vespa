@@ -8,6 +8,7 @@ import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/iconoir.dart';
 import 'package:iconify_flutter/icons/heroicons_solid.dart';
 import 'package:iconify_flutter/icons/arcticons.dart';
+import 'package:vespa/widget/cart_list.dart';
 
 
 class NavigationDrawer extends StatefulWidget {
@@ -57,6 +58,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               icon: Iconoir.small_shop_alt,
               iconColor: Colors.white,
               size: 16,
+              text: "Cart",
+              onClicked: () => SelectedItem(context, int, 2),
+            ),
+            MenuItem(
+              icon: Iconoir.small_shop_alt,
+              iconColor: Colors.white,
+              size: 16,
               text: "Outlet",
             ),
           ],
@@ -99,7 +107,7 @@ void SelectedItem(BuildContext context, int, index) {
       break;
     case 2:
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Homepage()));
+          .push(MaterialPageRoute(builder: (context) => CartList()));
       break;
     case 3:
       Navigator.of(context)
