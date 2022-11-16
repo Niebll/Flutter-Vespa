@@ -23,9 +23,10 @@ class DetailVespaAll extends StatefulWidget {
 class _DetailVespaAll extends State<DetailVespaAll> {
   @override
   Widget build(BuildContext context) {
-    final paneHeightClosed = MediaQuery.of(context).size.height * 0.425;
+    final paneHeightClosed = MediaQuery.of(context).size.height * 0.55;
     final paneHeightOpen = MediaQuery.of(context).size.height * 1;
     return Scaffold(
+      backgroundColor: HexColor(widget.vespas.all[widget.index].primarycolor.toString()),
         body: SafeArea(
           child: SlidingUpPanel(
             minHeight: paneHeightClosed,
@@ -36,15 +37,22 @@ class _DetailVespaAll extends State<DetailVespaAll> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      child: IconButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        icon: Icon(Icons.arrow_back_ios),
-                        color: Color.fromRGBO(109, 203, 176, 1),
+                    color: Colors.white,
+                    width: MediaQuery.of(context).size.width,
+                      child: Align(
+                        alignment: Alignment.topLeft,
+                        child: IconButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          icon: Icon(Icons.arrow_back_ios),
+                          color: Color.fromRGBO(109, 203, 176, 1),
+                        ),
                       )),
                   Container(
                     color: HexColor(widget.vespas.all[widget.index].primarycolor.toString()),
                     child: Center(
                       child: ImageSlideshow(
+                        indicatorColor: Colors.transparent,
+                        indicatorBackgroundColor: Colors.transparent,
                         width: 325,
                         height: 325,
                         initialPage: 0,
