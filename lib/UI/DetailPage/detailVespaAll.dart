@@ -51,8 +51,12 @@ class _DetailVespaAll extends State<DetailVespaAll> {
                     height: 325,
                     initialPage: 0,
                     children: [
-                      Image.network(
-                          widget.vespas.all[widget.index].img.toString()),
+                       Hero(
+                        tag: "${widget.vespas.all[widget.index].name}",
+                        child: Image.network(widget
+                            .vespas.all[widget.index].imgthumbnail
+                            .toString()),
+                      ),
                       Image.network(
                           widget.vespas.all[widget.index].img2.toString()),
                       Image.network(
