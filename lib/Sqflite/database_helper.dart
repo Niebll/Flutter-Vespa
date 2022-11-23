@@ -29,13 +29,16 @@ class VespaDatabase {
   Future _createDB(Database db, int version) async {
     final idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     final textType = 'TEXT NOT NULL';
+    final intType = "INTEGER NOT NULL";
 
     // creating table
     await db.execute('''
     CREATE TABLE ${VespaClass.favorite_team}(
     ${VespaClass.id} $idType,
     ${VespaClass.title} $textType,
-    ${VespaClass.imgthumbnail} $textType
+    ${VespaClass.imgthumbnail} $textType,
+    ${VespaClass.harga} $textType,
+    ${VespaClass.primaryColor} $textType
     )
     ''');
   }

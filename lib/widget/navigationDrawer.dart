@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vespa/UI/Catalogue/catalogueVespa.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
-import 'package:vespa/UI/IntroPage/loginPage.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/healthicons.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
@@ -55,7 +54,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               ),
             ),
             MenuItem(
-              icon: Iconoir.small_shop_alt,
+              icon: Iconoir.add_to_cart,
               iconColor: Colors.white,
               size: 16,
               text: "Cart",

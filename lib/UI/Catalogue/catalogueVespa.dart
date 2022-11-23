@@ -130,7 +130,7 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               ),
                                             ),
                                             Text(
-                                              "\$${vespas.data!.all[index].harga.toString()}",
+                                              "${vespas.data!.all[index].harga.toString()} \€",
                                             )
                                           ],
                                         ),
