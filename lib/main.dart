@@ -8,6 +8,7 @@ import 'package:vespa/UI/SplashScreen/splashScreen.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'UI/BuyingPage/payment.dart';
+import 'UI/OutletPage/outletpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     initializeDateFormatting('az');
     return MaterialApp(
-      home: PaymentPage()
+      home: OutletPage()
     );
   }
 }
