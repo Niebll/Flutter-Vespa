@@ -102,9 +102,13 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               width:
                                               MediaQuery.of(context).size.width,
                                               height: 160,
-                                              child: Image.network(vespas
-                                                  .data!.all[index].imgthumbnail
-                                                  .toString()),
+                                              child: Hero(
+                                                tag: "${vespas.data!.all[index].name}",
+                                                child: Image.network(vespas
+                                                    .data!.all[index].imgthumbnail
+                                                    .toString()),
+                                                transitionOnUserGestures: true,
+                                              ),
                                             )
                                           ],
                                         ),
