@@ -39,12 +39,6 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                             icon: Icon(Icons.arrow_back_ios),
                             color: Color.fromRGBO(109, 203, 176, 1),
                           ),
-                          Spacer(),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(Icons.add_shopping_cart),
-                            color: Color.fromRGBO(109, 203, 176, 1),
-                          )
                         ],
                       )
                   ),
@@ -88,7 +82,7 @@ class _AksesorisDetailState extends State<AksesorisDetail> {
                       color: Colors.black,
                     ),
                     child: Center(
-                      child: Icon(Icons.shop_outlined, color: Colors.white,)
+                        child: Icon(Icons.add_shopping_cart, color: Colors.white,)
                     ),
                   ),
                 ),
