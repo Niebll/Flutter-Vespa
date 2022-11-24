@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     initializeDateFormatting('az');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CatalogueVespa()
+      home: Loginpage()
     );
   }
 }
