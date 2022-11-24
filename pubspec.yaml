@@ -43,6 +43,7 @@ dependencies:
   flutter_typeahead: ^4.1.1
   intl:
   iconify_flutter:
+  sqflite:
 
 dev_dependencies:
   flutter_test:

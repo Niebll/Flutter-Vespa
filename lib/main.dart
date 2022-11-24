@@ -24,7 +24,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     initializeDateFormatting('az');
     return MaterialApp(
-      home: PaymentPage()
+      debugShowCheckedModeBanner: false,
+      home: CatalogueVespa()
     );
   }
 }

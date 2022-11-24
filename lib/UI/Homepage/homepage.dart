@@ -114,6 +114,7 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
               width: double.maxFinite,
               height: 250,
               child: TabBarView(
+                physics: NeverScrollableScrollPhysics(),
                 controller: _tabController,
                 children: [
                   LimitedVespaList(),

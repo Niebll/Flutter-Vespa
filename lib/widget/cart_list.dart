@@ -1,25 +1,82 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vespa/Model/allVespaModel.dart';
-import 'package:vespa/UI/DetailPage/detailVespaAll.dart';
-import 'package:vespa/widget/navigationDrawer.dart';
+import 'package:vespa/Sqflite/cart_vespa.dart';
+import 'package:vespa/Sqflite/database_helper.dart';
+import 'HexColor.dart';
+import 'navigationDrawer.dart';
 
-class CatalogueVespa extends StatefulWidget {
-  const CatalogueVespa({Key? key}) : super(key: key);
+class CartList extends StatefulWidget {
+  const CartList({Key? key}) : super(key: key);
 
   @override
-  State<CatalogueVespa> createState() => _CatalogueVespaState();
+  State<CartList> createState() => _CartListState();
 }
 
-class _CatalogueVespaState extends State<CatalogueVespa> {
-  Future<Vespas> getAllVespaDatas(BuildContext context) async {
-    String jsonString = await DefaultAssetBundle.of(context)
-        .loadString("assets/datas/allVespaDatas.json");
-    return vespasFromJson(jsonString);
+class _CartListState extends State<CartList> {
+  List<VespaCart> dataCartVespaList = [];
+  bool isLoading = false;
+  bool checkExist = false;
+
+  Future read() async {
+    setState(() {
+      isLoading = true;
+      print(dataCartVespaList);
+    });
+    dataCartVespaList = await VespaDatabase.instance.readAll();
+    setState(() {
+      isLoading = false;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    dataCartVespaList;
+    super.initState();
+    read();
+  }
+
+  showDeleteDialog(BuildContext context, int Index) {
+    // set up the button
+    Widget cancelButton = TextButton(
+      child: Text("Tidak"),
+      onPressed: () {
+        Navigator.pop(context);
+      },
+    );
+    Widget okButton = TextButton(
+      child: Text("Hapus"),
+      onPressed: () async {
+        setState(() {
+          isLoading = true;
+        });
+        await VespaDatabase.instance.delete(dataCartVespaList[Index].title!);
+        read();
+        setState(() {
+          isLoading = false;
+        });
+        Navigator.of(context, rootNavigator: true).pop();
+      },
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      content: Text("Apakah anda yakin ingin menghapus?"),
+      actions: [cancelButton, okButton],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
+    );
   }
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         drawer: NavigationDrawer(),
         appBar: AppBar(
@@ -28,40 +85,33 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
           backgroundColor: Colors.white,
           actions: [Image.asset("assets/images/vespa_logo.jpg")],
           title: Text(
-            "Catalogue",
+            "Cart",
             style: GoogleFonts.bebasNeue(letterSpacing: 5, color: Colors.black),
           ),
           centerTitle: true,
         ),
         backgroundColor: Colors.white,
-        body: FutureBuilder<Vespas>(
-            future: getAllVespaDatas(context),
-            builder: (context, vespas) {
-              if (vespas.hasData) {
-                return GridView.builder(
+        body: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      // crossAxisCount: 2,
-                      // childAspectRatio: MediaQuery.of(context).size.width/(MediaQuery.of(context).size.height/1.6) ,
                       crossAxisCount: 2,
                       crossAxisSpacing: 0,
                       mainAxisSpacing: 10,
-                      // childAspectRatio: 1,
                       mainAxisExtent: 230,
-
                     ),
                     scrollDirection: Axis.vertical,
-                    itemCount: vespas.data?.all.length,
+                    itemCount: dataCartVespaList.length,
                     itemBuilder: (context, index) {
                       return InkWell(
-                        onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                                return DetailVespaAll(
-                                  vespas: vespas.data!,
-                                  index: index,
-                                );
-                              }));
-                        },
+                        // onTap: () {
+                        //   Navigator.push(context,
+                        //       MaterialPageRoute(builder: (context) {
+                        //         return DetailVespaAll(
+                        //           vespas: vespas.data!,
+                        //           index: index,
+                        //         );
+                        //       })
+                        //     );
+                        // },
                         child: Container(
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -94,28 +144,20 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                 BorderRadius.circular(20),
-                                                color: HexColor(vespas.data!
-                                                    .all[index].primarycolor),
+                                                color: HexColor(dataCartVespaList[index].primaryColor.toString()),
                                               ),
                                             ),
                                             Container(
                                               width:
                                               MediaQuery.of(context).size.width,
                                               height: 160,
-                                              child: Hero(
-                                                tag: "${vespas.data!.all[index].name}",
-                                                child: Image.network(vespas
-                                                    .data!.all[index].imgthumbnail
-                                                    .toString()),
-                                                transitionOnUserGestures: true,
-                                              ),
+                                              child: Image.network(dataCartVespaList[index].imgthumbnail.toString())
                                             )
                                           ],
                                         ),
                                       ),
                                       Container(
-                                        padding:
-                                        EdgeInsets.symmetric(horizontal: 5),
+                                        padding: EdgeInsets.symmetric(horizontal: 5),
                                         child: Column(
                                           children: [
                                             SizedBox(
@@ -126,18 +168,22 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               MediaQuery.of(context).size.width,
                                               height: 70,
                                               padding: const EdgeInsets.all(10.0),
-                                              child: Text(
-                                                vespas.data!.all[index].name
-                                                    .toString(),
+                                              child: Text( dataCartVespaList[index].title.toString(),
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold),
                                               ),
                                             ),
                                             Text(
-                                              "${vespas.data!.all[index].harga.toString()} \€",
+                                              "${dataCartVespaList[index].harga} \€",
                                             )
                                           ],
                                         ),
+                                      ),
+                                      Positioned(
+                                        right: 0,
+                                        child: IconButton(onPressed: (){
+                                          showDeleteDialog(context, index);
+                                        }, icon: Icon(Icons.delete, color: Colors.red)),
                                       ),
                                     ],
                                   ),
@@ -147,24 +193,9 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                           ),
                         ),
                       );
-                    });
-              } else {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              }
-            }));
-  }
-}
+                    }
+                    )
 
-class HexColor extends Color {
-  static int _getColorFromHex(String hexColor) {
-    hexColor = hexColor.toUpperCase().replaceAll("#", "");
-    if (hexColor.length == 6) {
-      hexColor = "FF" + hexColor;
-    }
-    return int.parse(hexColor, radix: 16);
+    );
   }
-
-  HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }

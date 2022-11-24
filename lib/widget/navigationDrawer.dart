@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:vespa/UI/Catalogue/catalogueVespa.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
-import 'package:vespa/UI/IntroPage/loginPage.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/healthicons.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/iconoir.dart';
 import 'package:iconify_flutter/icons/heroicons_solid.dart';
 import 'package:iconify_flutter/icons/arcticons.dart';
+import 'package:vespa/widget/cart_list.dart';
 
 
 class NavigationDrawer extends StatefulWidget {
@@ -52,6 +52,13 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                   MenuItem(text: "Accesories", icon: Mdi.racing_helmet, iconColor: Colors.white, size: 16)
                 ],
               ),
+            ),
+            MenuItem(
+              icon: Iconoir.add_to_cart,
+              iconColor: Colors.white,
+              size: 16,
+              text: "Cart",
+              onClicked: () => SelectedItem(context, int, 2),
             ),
             MenuItem(
               icon: Iconoir.small_shop_alt,
@@ -99,7 +106,7 @@ void SelectedItem(BuildContext context, int, index) {
       break;
     case 2:
       Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Homepage()));
+          .push(MaterialPageRoute(builder: (context) => CartList()));
       break;
     case 3:
       Navigator.of(context)
