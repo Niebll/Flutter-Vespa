@@ -6,8 +6,8 @@ import 'package:intl/intl.dart';
 import '../../widget/Colors/colors.dart';
 
 class PaymentPage extends StatefulWidget {
-  const PaymentPage({Key? key}) : super(key: key);
-
+  PaymentPage({Key? key, required this.harga}) : super(key: key);
+  int harga;
   @override
   State<PaymentPage> createState() => _PaymentPageState();
 }
@@ -224,7 +224,7 @@ class _PaymentPageState extends State<PaymentPage> {
               children: [
                 Text("Subtotal"),
                 Spacer(),
-                Text("2000E"),
+                Text(widget.harga.toString()+ "\€"),
               ],
             ),
           ),
@@ -234,7 +234,7 @@ class _PaymentPageState extends State<PaymentPage> {
               children: [
                 Text("Taxes"),
                 Spacer(),
-                Text("100E"),
+                Text("100\€"),
               ],
             ),
           ),
@@ -248,7 +248,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 ),
                 Spacer(),
                 Text(
-                  "2100E",
+                  "${widget.harga + 100}\€",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
               ],
