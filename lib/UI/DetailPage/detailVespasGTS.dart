@@ -13,6 +13,8 @@ import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/nimbus.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 
+import '../BuyingPage/payment.dart';
+
 class DetailVespaGTS extends StatefulWidget {
   // final String vespas;
   DetailVespaGTS({Key? key, required this.vespas, required this.index})
@@ -158,46 +160,56 @@ class _DetailVespaGTS extends State<DetailVespaGTS> {
                         ),
                       ),
                     ),
-                    Container(
-                      width: 260,
-                      height: 60,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Color.fromRGBO(109, 203, 176, 1),
-                          boxShadow: [
-                            BoxShadow(color: Colors.grey, spreadRadius: 0.5)
-                          ]),
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: 20,
-                          ),
-                          Text(
-                            NumberFormat.simpleCurrency(locale: "EUR", decimalDigits: 0).format(widget.vespas.gts[widget.index].harga),
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 22,
-                                color: Colors.white
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentPage(
+                                  harga: widget.vespas.gts[widget.index].harga),
+                            ));
+                      },
+                      child: Container(
+                        width: 260,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color.fromRGBO(109, 203, 176, 1),
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey, spreadRadius: 0.5)
+                            ]),
+                        child: Row(
+                          // mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 20,
                             ),
-                          ),
-                          Spacer(),
-                          Text(
-                            "|",
-                            style: TextStyle(fontSize: 18),
-                          ),
-                          Spacer(),
-                          Text(
-                            "Buy Now",
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.white
+                            Text(
+                              NumberFormat.simpleCurrency(locale: "EUR", decimalDigits: 0).format(widget.vespas.gts[widget.index].harga),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                  color: Colors.white
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            width: 20,
-                          )
-                        ],
+                            Spacer(),
+                            Text(
+                              "|",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Spacer(),
+                            Text(
+                              "Buy Now",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white
+                              ),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ]),

@@ -76,7 +76,6 @@ class _CartListState extends State<CartList> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         drawer: NavigationDrawer(),
         appBar: AppBar(
@@ -145,6 +144,7 @@ class _CartListState extends State<CartList> {
                                                 borderRadius:
                                                 BorderRadius.circular(20),
                                                 color: HexColor(dataCartVespaList[index].primaryColor.toString()),
+                                                // color: Colors.white,
                                               ),
                                             ),
                                             Container(
