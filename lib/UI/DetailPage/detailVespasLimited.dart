@@ -35,12 +35,12 @@ class _DetailVespaLimited extends State<DetailVespaLimited> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                  child: IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: Icon(Icons.arrow_back_ios),
-                color: Color.fromRGBO(109, 203, 176, 1),
-              )),
+                Container(
+                    child: IconButton(
+                  onPressed: () => Navigator.of(context).pop(),
+                  icon: Icon(Icons.arrow_back_ios),
+                  color: Color.fromRGBO(109, 203, 176, 1),
+                )),
               Container(
                 color: HexColor(widget.vespas.limited[widget.index].primarycolor.toString()),
                 child: Center(

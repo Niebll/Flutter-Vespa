@@ -54,8 +54,10 @@ class _PaymentPageState extends State<PaymentPage> {
         iconTheme: IconThemeData(color: Colors.black),
         shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
-        leading: BackButton(
-          onPressed: () => Navigator.pop(context),
+        leading: IconButton(
+          onPressed: () => Navigator.of(context).pop(),
+          icon: Icon(Icons.arrow_back_ios),
+          color: Color.fromRGBO(109, 203, 176, 1),
         ),
         title: Text(
           "Payment",
