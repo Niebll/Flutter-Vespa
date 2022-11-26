@@ -4,10 +4,12 @@ import 'package:vespa/UI/Catalogue/catalogueVespa.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
 import 'package:vespa/UI/IntroPage/loginPage.dart';
 import 'package:vespa/UI/IntroPage/startPage.dart';
+import 'package:vespa/UI/ProfilePage/profilepage.dart';
 import 'package:vespa/UI/SplashScreen/splashScreen.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 import 'UI/BuyingPage/payment.dart';
+import 'UI/OutletPage/outletpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +27,7 @@ class _MyAppState extends State<MyApp> {
     initializeDateFormatting('az');
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Homepage()
+      home: SplashScreen()
     );
   }
 }
