@@ -1,6 +1,7 @@
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vespa/UI/Catalogue/catalogueAksesoris.dart';
 import 'package:vespa/widget/aksesorisList.dart';
 import 'package:vespa/widget/gtsVespasList.dart';
 import 'package:vespa/widget/limitedVespaList.dart';
@@ -134,9 +135,18 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   Spacer(),
-                  Text(
-                    "View More",
-                    style: TextStyle(color: Colors.grey),
+                  GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CatalogueAksesoris(),
+                        ));
+                  },
+                    child: Text(
+                      "View More",
+                      style: TextStyle(color: Colors.grey),
+                    ),
                   )
                 ],
               ),

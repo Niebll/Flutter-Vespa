@@ -3,6 +3,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:vespa/UI/IntroPage/loginPage.dart';
+import 'package:vespa/UI/IntroPage/startPage.dart';
 
 
 import '../Homepage/homepage.dart';
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: 'assets/images/vespa_logo.jpg',
-      nextScreen: Loginpage(),
+      nextScreen: Startpage(),
       splashTransition: SplashTransition.scaleTransition,
       pageTransitionType: PageTransitionType.fade,
       backgroundColor: Color.fromRGBO(109, 203, 176, 1),

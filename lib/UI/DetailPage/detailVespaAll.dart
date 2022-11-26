@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:vespa/Model/allVespaModel.dart';
+import 'package:vespa/UI/BuyingPage/payment.dart';
 import 'package:vespa/widget/HexColor.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/nimbus.dart';
@@ -65,145 +66,153 @@ class _DetailVespaAll extends State<DetailVespaAll> {
       child: Scaffold(
         backgroundColor: HexColor(widget.vespas.all[widget.index].primarycolor.toString()),
           body: Stack(children: [
-        SlidingUpPanel(
-          minHeight: paneHeightClosed,
-          maxHeight: paneHeightOpen,
-          borderRadius: BorderRadius.only(
-          topRight: Radius.circular(30), topLeft: Radius.circular(30)),
-          body: SingleChildScrollView(
-            child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              color: Colors.white,
-              child: Row(
-                children: [
-                  IconButton(
-                    onPressed: () => Navigator.of(context).pop(),
-                    icon: Icon(Icons.arrow_back_ios),
-                    color: Color.fromRGBO(109, 203, 176, 1),
-                  ),
-                  Spacer(),
-                  Text(widget.vespas.all[widget.index].tipe,
-                    style: GoogleFonts.bebasNeue(
-                      fontSize: 20,
-                      letterSpacing: 5,
-                    ),
-                  ),
-                  Spacer(),
-                  Text("MMMM", style: TextStyle(color: Colors.white),)
-                ],
-              ),
-            ),
-            Container(
-              color: HexColor(
-                  widget.vespas.all[widget.index].primarycolor.toString()),
-              child: Center(
-                child: ImageSlideshow(
-                  width: MediaQuery.of(context).size.width / 1.3 * 1.5,
-                  height: MediaQuery.of(context).size.height / 2.5 * 1.1,
-                  // width: 325,
-                  // height: 325,
-                  initialPage: 0,
+            SlidingUpPanel(
+              minHeight: paneHeightClosed,
+              maxHeight: paneHeightOpen,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30), topLeft: Radius.circular(30)),
+              body: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.network(
-                        widget.vespas.all[widget.index].img.toString()),
-                    Image.network(
-                        widget.vespas.all[widget.index].img2.toString()),
-                    Image.network(
-                        widget.vespas.all[widget.index].img3.toString()),
+                    Container(
+                      color: Colors.white,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () => Navigator.of(context).pop(),
+                            icon: Icon(Icons.arrow_back_ios),
+                            color: Color.fromRGBO(109, 203, 176, 1),
+                          ),
+                          Spacer(),
+                          Text(
+                            widget.vespas.all[widget.index].tipe,
+                            style: GoogleFonts.bebasNeue(
+                              fontSize: 20,
+                              letterSpacing: 5,
+                            ),
+                          ),
+                          Spacer(),
+                          Text(
+                            "MMMM",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      color: HexColor(widget
+                          .vespas.all[widget.index].primarycolor
+                          .toString()),
+                      child: Center(
+                        child: ImageSlideshow(
+                          width: MediaQuery.of(context).size.width / 1.3 * 1.5,
+                          height:
+                              MediaQuery.of(context).size.height / 2.5 * 1.1,
+                          // width: 325,
+                          // height: 325,
+                          initialPage: 0,
+                          children: [
+                            Image.network(
+                                widget.vespas.all[widget.index].img.toString()),
+                            Image.network(widget.vespas.all[widget.index].img2
+                                .toString()),
+                            Image.network(widget.vespas.all[widget.index].img3
+                                .toString()),
+                          ],
+                          onPageChanged: (value) {
+                            print('Page changed: $value');
+                          },
+                          autoPlayInterval: 3000,
+                          isLoop: true,
+                        ),
+                      ),
+                    ),
                   ],
-                  onPageChanged: (value) {
-                    print('Page changed: $value');
-                  },
-                  autoPlayInterval: 3000,
-                  isLoop: true,
                 ),
               ),
+              panelBuilder: (controller) => PanelWidgetVespas(
+                  controller: controller, all: widget.vespas.all[widget.index]),
             ),
-          ],
-            ),
-          ),
-          panelBuilder: (controller) => PanelWidgetVespas(
-          controller: controller, all: widget.vespas.all[widget.index]),
-        ),
-        Positioned(
-            bottom: 0,
-            child: Container(
-          width: MediaQuery.of(context).size.width,
-          color: Colors.white,
-          height: 80,
-          child: Row(children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 10.0, right: 10),
-              child: Container(
-                width: 60,
-                height: 60,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: checkExist
-                        ? Colors.red
-                        : Colors.grey,
-                    boxShadow: [
-                      BoxShadow(color: Colors.grey, spreadRadius: 0.5)
-                    ]),
-                child: Center(
-                    child: IconButton(onPressed: () {
-                      checkExist ? deleteData() : addData();
-                    },
-                        icon: Icon(
-                          Icons.add_shopping_cart,
-                          color: Colors.white
-                        )
+            Positioned(
+                bottom: 0,
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  color: Colors.white,
+                  height: 80,
+                  child: Row(children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0, right: 10),
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: checkExist ? Colors.red : Colors.grey,
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey, spreadRadius: 0.5)
+                            ]),
+                        child: Center(
+                            child: IconButton(
+                                onPressed: () {
+                                  checkExist ? deleteData() : addData();
+                                },
+                                icon: Icon(Icons.add_shopping_cart,
+                                    color: Colors.white))),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PaymentPage(
+                                  harga: widget.vespas.all[widget.index].harga),
+                            ));
+                      },
+                      child: Container(
+                        width: 260,
+                        height: 60,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Color.fromRGBO(109, 203, 176, 1),
+                            boxShadow: [
+                              BoxShadow(color: Colors.grey, spreadRadius: 0.5)
+                            ]),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: 20,
+                            ),
+                            Text(
+                              "${widget.vespas.all[widget.index].harga.toString()}£",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                  color: Colors.white),
+                            ),
+                            Spacer(),
+                            Text(
+                              "|",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Spacer(),
+                            Text(
+                              "Buy Now",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
+                            ),
+                            SizedBox(
+                              width: 20,
+                            )
+                          ],
+                        ),
+                      ),
                     )
-                ),
-              ),
-            ),
-            Container(
-              width: 260,
-              height: 60,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Color.fromRGBO(109, 203, 176, 1),
-                  boxShadow: [
-                    BoxShadow(color: Colors.grey, spreadRadius: 0.5)
                   ]),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Text(
-                    "${widget.vespas.all[widget.index].harga.toString()}£",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 22,
-                      color: Colors.white
-                    ),
-                  ),
-                  Spacer(),
-                  Text(
-                    "|",
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  Spacer(),
-                  Text(
-                    "Buy Now",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white
-                    ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  )
-                ],
-              ),
-            )
-          ]),
-            ))
-      ])),
+                ))
+          ])
+      ),
     );
   }
 }

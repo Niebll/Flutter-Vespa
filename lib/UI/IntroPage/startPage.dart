@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:vespa/UI/IntroPage/loginPage.dart';
 
 class Startpage extends StatefulWidget {
   const Startpage({Key? key}) : super(key: key);
@@ -88,22 +89,27 @@ class _StartpageState extends State<Startpage> {
                 ),
               ),
               Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 20),
-                child: Container(
-                  width: 300,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Color.fromRGBO(109, 203, 176, 1),
-                  ),
-                  child: Center(
-                      child: Text(
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Loginpage(),));
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: Container(
+                    width: 300,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color.fromRGBO(109, 203, 176, 1),
+                    ),
+                    child: Center(
+                        child: Text(
                           "Login",
-                        style: TextStyle(
-                          color: Colors.white
-                        ),
-                      )
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        )
+                    ),
                   ),
                 ),
               ),

@@ -1,25 +1,28 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:vespa/Model/allVespaModel.dart';
-import 'package:vespa/UI/BuyingPage/payment.dart';
-import 'package:vespa/UI/DetailPage/detailVespaAll.dart';
-import 'package:vespa/widget/navigationDrawer.dart';
+import 'package:vespa/Model/aksesorisModel.dart';
 
 import '../../widget/HexColor.dart';
+import '../../widget/navigationDrawer.dart';
+import '../DetailPage/detailAksesoris.dart';
 
-class CatalogueVespa extends StatefulWidget {
-  const CatalogueVespa({Key? key}) : super(key: key);
+class CatalogueAksesoris extends StatefulWidget {
+  const CatalogueAksesoris({Key? key}) : super(key: key);
 
   @override
-  State<CatalogueVespa> createState() => _CatalogueVespaState();
+  State<CatalogueAksesoris> createState() => _CatalogueAksesorisState();
 }
 
-class _CatalogueVespaState extends State<CatalogueVespa> {
-  Future<Vespas> getAllVespaDatas(BuildContext context) async {
+class _CatalogueAksesorisState extends State<CatalogueAksesoris> {
+  Future<List> getAksesorisList(BuildContext context) async {
     String jsonString = await DefaultAssetBundle.of(context)
-        .loadString("assets/datas/allVespaDatas.json");
-    return vespasFromJson(jsonString);
+        .loadString("assets/datas/aksesorisDatas.json");
+    List<dynamic> raw = jsonDecode(jsonString);
+    return raw.map((f) => Aksesoris.fromJson(f)).toList();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +40,11 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
           centerTitle: true,
         ),
         backgroundColor: Colors.white,
-        body: FutureBuilder<Vespas>(
-            future: getAllVespaDatas(context),
-            builder: (context, vespas) {
-              if (vespas.hasData) {
+        body: FutureBuilder(
+            future: getAksesorisList(context),
+            builder: (context, data) {
+              if (data.hasData) {
+                List<Aksesoris> aksesoris = data.data as List<Aksesoris>;
                 return GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       // crossAxisCount: 2,
@@ -52,16 +56,13 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
 
                     ),
                     scrollDirection: Axis.vertical,
-                    itemCount: vespas.data?.all.length,
+                    itemCount: aksesoris.length,
                     itemBuilder: (context, index) {
                       return InkWell(
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                                return DetailVespaAll(
-                                  vespas: vespas.data!,
-                                  index: index,
-                                );
+                                return AksesorisDetail(aksesoris: aksesoris[index]);
                               }));
                         },
                         child: Container(
@@ -96,8 +97,7 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                 BorderRadius.circular(20),
-                                                color: HexColor(vespas.data!
-                                                    .all[index].primarycolor),
+                                                color: Colors.white,
                                               ),
                                             ),
                                             Container(
@@ -105,10 +105,8 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               MediaQuery.of(context).size.width,
                                               height: 160,
                                               child: Hero(
-                                                tag: "${vespas.data!.all[index].name}",
-                                                child: Image.network(vespas
-                                                    .data!.all[index].imgthumbnail
-                                                    .toString()),
+                                                tag: aksesoris[index].name.toString(),
+                                                child: Image.network(aksesoris[index].img.toString()),
                                                 transitionOnUserGestures: true,
                                               ),
                                             )
@@ -128,15 +126,13 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
                                               MediaQuery.of(context).size.width,
                                               height: 70,
                                               padding: const EdgeInsets.all(10.0),
-                                              child: Text(
-                                                vespas.data!.all[index].name
-                                                    .toString(),
+                                              child: Text(aksesoris[index].name.toString(),
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.bold),
                                               ),
                                             ),
                                             Text(
-                                              "${vespas.data!.all[index].harga.toString()} \€",
+                                              "${aksesoris[index].harga.toString()} \€",
                                             )
                                           ],
                                         ),
