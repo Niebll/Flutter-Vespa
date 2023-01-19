@@ -26,7 +26,7 @@
           "fitur": "LED Front Lamp"
         },
         {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-lx/lx/Features_LED-Daytime-Running-Light_177x177px.jpg",          
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-lx/lx/Features_LED-Daytime-Running-Light_177x177px.jpg",
           "fitur": "LED Daytime Running Light"
         },
         {
@@ -95,11 +95,11 @@
       "engine": "single cylinder, 4 strokes, 3 valves",
       "primarycolor": "cec8b5",
       "fiture": [
-        {        
+        {
           "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera-s/Classic-LCD-Dashboard.jpg",
           "fitur": "Classic LCD Dashboard"
         },
-        {        
+        {
           "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera-s/LED-Front-Lamp.jpg",
           "fitur": "LED Front Lamp"
         },
@@ -274,45 +274,6 @@
       ]
     },
     {
-      "tipe": "GTS",
-      "name": "VESPA GTS SUPER 150 LIMITED EDITION I-GET ABS",
-      "cc": 150,
-      "harga": 5125,
-      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img2": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-03.png",
-      "img3": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-01.png",
-      "tagline": "The icon that enhances style, safety, outstanding sportiness and luxurious comfort",
-      "judul_description": "RIDE WITH MORE COMFORT ON THE VESPA GTS SUPER",
-      "descripstion": "Vespa GTS Super 150 comes with stylistic evolution from the Vespa GTS heritage by preserving the balance between tradition and modernity embodies the typical character of Vespa that values premium Italian style, comfort and safety. Dedicated for those who embrace historical significance and adventurous, unique, elegant and convenience.",
-      "power": "10.8 kW  8,250 rpm",
-      "lengthWidth": "1,950 mm / 740 mm",
-      "engine": "single cylinder, 4-stroke 4 valves with Start & Stop system",
-      "primarycolor": "c8bfb6",
-      "fiture": [
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Design.jpg",
-          "fitur": "LCD Dashboard"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Fly-Screen-Fume.jpg",
-          "fitur": "Fly Screen Fume"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_New-Sticker.jpg",
-          "fitur": "New Sticker"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Dedicated-Saddle-Material.jpg",
-          "fitur": "Dedicated Saddle Material"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_All-Finishing-in-black.jpg",
-          "fitur": "All Finishing in black"
-        }
-      ]
-    },
-    {
       "tipe": "GTV",
       "name": "VESPA SEI GIORNI II EDITION",
       "cc": 300,
@@ -348,90 +309,12 @@
         {
           "fiturimg": "https://vespa.co.id/assets/img/vespa-gtv/features_honeycomb-grills.jpg",
           "fitur": "Lateral Grills With Honeycomb Structure"
-        }
-      ]
-    },
-    {
-      "tipe": "Sprint",
-      "name": "Vespa 10th Anniversary Sprint 150 i get",
-      "cc": 150,
-      "harga": 3840,
-      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-2.png",
-      "img": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-2.png",
-      "img2": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-3.png",
-      "img3": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-1.png",
-      "tagline": "THE AMAZING JOURNEY CONTINUES",
-      "judul_description": "VESPA IN INDONESIA CELEBRATES ITS 10TH ANNIVERSARY",
-      "descripstion": "As a symbol of robust commitment to further enhance the amazing journey and showcase its true dedication in Indonesia, PT Piaggio Indonesia has chosen Vespa, out of the 4 brands, to represent the celebration of its 10th Anniversary. Vespa has a long and well-known history in Indonesia and is considered as the true jewel heritage in Indonesia. The Vespa 10th Anniversary Indonesia Limited Edition is created based on the most beloved Vespa model, Vespa Sprint 150 i-get ABS, which is forever brave, innovative, and magnificent – just like Indonesia and its people.",
-      "power": "8.7 kW  7,500 rpm",
-      "lengthWidth": "1,863 mm / 695 mm",
-      "engine": "single cylinder, 4 strokes, 3 valves",
-      "primarycolor": "26384D",
-      "fiture": [
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/TFT-Dashboard.jpg",
-          "fitur": "TFT dashboard"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/Dedicated-badge-with-special-numbers.jpg",
-          "fitur": "Dedicated badge with special numbers"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/Edge-shield-in-bronze.jpg",
-          "fitur": "Edge shield in bronze"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/LED-Front-Lamp.jpg",
-          "fitur": "LED front Lamp"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/New-Saddle-Design.jpg",
-          "fitur": "New Saddle Design"
         }
       ]
     }
   ],
   "limited": [
     {
-      "tipe": "GTS",
-      "name": "VESPA GTS SUPER 150 LIMITED EDITION I-GET ABS",
-      "cc": 150,
-      "harga": 5125,
-      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img2": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-03.png",
-      "img3": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-01.png",
-      "tagline": "The icon that enhances style, safety, outstanding sportiness and luxurious comfort",
-      "judul_description": "RIDE WITH MORE COMFORT ON THE VESPA GTS SUPER",
-      "descripstion": "Vespa GTS Super 150 comes with stylistic evolution from the Vespa GTS heritage by preserving the balance between tradition and modernity embodies the typical character of Vespa that values premium Italian style, comfort and safety. Dedicated for those who embrace historical significance and adventurous, unique, elegant and convenience.",
-      "power": "10.8 kW  8,250 rpm",
-      "lengthWidth": "1,950 mm / 740 mm",
-      "engine": "single cylinder, 4-stroke 4 valves with Start & Stop system",
-      "primarycolor": "c8bfb6",
-      "fiture": [
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Design.jpg",
-          "fitur": "LCD Dashboard"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Fly-Screen-Fume.jpg",
-          "fitur": "Fly Screen Fume"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_New-Sticker.jpg",
-          "fitur": "New Sticker"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Dedicated-Saddle-Material.jpg",
-          "fitur": "Dedicated Saddle Material"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_All-Finishing-in-black.jpg",
-          "fitur": "All Finishing in black"
-        }
-      ]
-    },
-    {
       "tipe": "GTV",
       "name": "VESPA SEI GIORNI II EDITION",
       "cc": 300,
@@ -467,45 +350,6 @@
         {
           "fiturimg": "https://vespa.co.id/assets/img/vespa-gtv/features_honeycomb-grills.jpg",
           "fitur": "Lateral Grills With Honeycomb Structure"
-        }
-      ]
-    },
-    {
-      "tipe": "Sprint",
-      "name": "Vespa 10th Anniversary Sprint 150 i get",
-      "cc": 150,
-      "harga": 3840,
-      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-2.png",
-      "img": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-2.png",
-      "img2": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-3.png",
-      "img3": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/models/indonesia-10th-anniversary-1.png",
-      "tagline": "THE AMAZING JOURNEY CONTINUES",
-      "judul_description": "VESPA IN INDONESIA CELEBRATES ITS 10TH ANNIVERSARY",
-      "descripstion": "As a symbol of robust commitment to further enhance the amazing journey and showcase its true dedication in Indonesia, PT Piaggio Indonesia has chosen Vespa, out of the 4 brands, to represent the celebration of its 10th Anniversary. Vespa has a long and well-known history in Indonesia and is considered as the true jewel heritage in Indonesia. The Vespa 10th Anniversary Indonesia Limited Edition is created based on the most beloved Vespa model, Vespa Sprint 150 i-get ABS, which is forever brave, innovative, and magnificent – just like Indonesia and its people.",
-      "power": "8.7 kW  7,500 rpm",
-      "lengthWidth": "1,863 mm / 695 mm",
-      "engine": "single cylinder, 4 strokes, 3 valves",
-      "primarycolor": "26384D",
-      "fiture": [
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/TFT-Dashboard.jpg",
-          "fitur": "TFT dashboard"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/Dedicated-badge-with-special-numbers.jpg",
-          "fitur": "Dedicated badge with special numbers"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/Edge-shield-in-bronze.jpg",
-          "fitur": "Edge shield in bronze"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/LED-Front-Lamp.jpg",
-          "fitur": "LED front Lamp"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-indonesia-10th-anniversary/New-Saddle-Design.jpg",
-          "fitur": "New Saddle Design"
         }
       ]
     }
@@ -588,45 +432,6 @@
           "fitur": "Mirrors in Chrome"
         }
       ]
-    },
-    {
-      "tipe": "GTS",
-      "name": "VESPA GTS SUPER 150 LIMITED EDITION I-GET ABS",
-      "cc": 150,
-      "harga": 5125,
-      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-02.png",
-      "img2": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-03.png",
-      "img3": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/models/bronze-antico-01.png",
-      "tagline": "The icon that enhances style, safety, outstanding sportiness and luxurious comfort",
-      "judul_description": "RIDE WITH MORE COMFORT ON THE VESPA GTS SUPER",
-      "descripstion": "Vespa GTS Super 150 comes with stylistic evolution from the Vespa GTS heritage by preserving the balance between tradition and modernity embodies the typical character of Vespa that values premium Italian style, comfort and safety. Dedicated for those who embrace historical significance and adventurous, unique, elegant and convenience.",
-      "power": "10.8 kW  8,250 rpm",
-      "lengthWidth": "1,950 mm / 740 mm",
-      "engine": "single cylinder, 4-stroke 4 valves with Start & Stop system",
-      "primarycolor": "c8bfb6",
-      "fiture": [
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Design.jpg",
-          "fitur": "LCD Dashboard"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Fly-Screen-Fume.jpg",
-          "fitur": "Fly Screen Fume"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_New-Sticker.jpg",
-          "fitur": "New Sticker"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_Dedicated-Saddle-Material.jpg",
-          "fitur": "Dedicated Saddle Material"
-        },
-        {
-          "fiturimg": "https://vespa.co.id/assets/img/vespa-gts/limitededition-150/Features_All-Finishing-in-black.jpg",
-          "fitur": "All Finishing in black"
-        }
-      ]
     }
   ],
   "sprint": [
@@ -707,46 +512,48 @@
           "fitur": "USB Port"
         }
       ]
-    }],
-  "primavera": [{
-    "tipe": "Primavera",
-    "name": "VESPA PRIMAVERA 150 I-GET ABS",
-    "cc": 150,
-    "harga": 3080,
-    "imgthumbnail": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-02.png",
-    "img": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-02.png",
-    "img2": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-03.png",
-    "img3": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-01.png",
-    "tagline": "The iconic symbol of passion is the quintessence of urban chic",
-    "judul_description": "LIVE MORE PASSIONATE WITH PRIMAVERA",
-    "descripstion": "Vespa Primavera is inspired by 'Vespini', the first legendary Vespa Primavera in 60s. Vespa Primavera embodies all the classic values that, half a century ago, made it successful yet still brings a modern innovative, technologically avant-garde, agile, dynamic vibe to its riders. The Italy’s finest vehicle dresses up for being the quintessence of urban chic. Small, nimble, propelled by a perky engine, Primavera gave free flight to several generation for those that believe in passion and delight.",
-    "power": "8.7 kW  7,500 rpm",
-    "lengthWidth": "1,863 mm / 695 mm",
-    "engine": "single cylinder, 4 strokes, 3 valves",
-    "primarycolor": "acd7c2",
-    "fiture": [
-      {
-        "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Classic-LCD-Dashboard.jpg",
-        "fitur": "Classic LCD Dashboard"
-      },
-      {
-        "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/LED-Front-Lamp.jpg",
-        "fitur": "LED Front Lamp"
-      },
-      {
-        "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Edge-Shield-in-Light-Grey.jpg",
-        "fitur": "Edge Shield in Light Grey"
-      },
-      {
-        "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Saddle-in-Light-Brown.jpg",
-        "fitur": "Saddle in Light Brown"
-      },
-      {
-        "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/USB-Port.jpg",
-        "fitur": "USB Port"
-      }
-    ]
-  },
+    }
+  ],
+  "primavera": [
+    {
+      "tipe": "Primavera",
+      "name": "VESPA PRIMAVERA 150 I-GET ABS",
+      "cc": 150,
+      "harga": 3080,
+      "imgthumbnail": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-02.png",
+      "img": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-02.png",
+      "img2": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-03.png",
+      "img3": "https://vespa.co.id/assets/img/vespa-primavera/primavera/models/green-relax-01.png",
+      "tagline": "The iconic symbol of passion is the quintessence of urban chic",
+      "judul_description": "LIVE MORE PASSIONATE WITH PRIMAVERA",
+      "descripstion": "Vespa Primavera is inspired by 'Vespini', the first legendary Vespa Primavera in 60s. Vespa Primavera embodies all the classic values that, half a century ago, made it successful yet still brings a modern innovative, technologically avant-garde, agile, dynamic vibe to its riders. The Italy’s finest vehicle dresses up for being the quintessence of urban chic. Small, nimble, propelled by a perky engine, Primavera gave free flight to several generation for those that believe in passion and delight.",
+      "power": "8.7 kW  7,500 rpm",
+      "lengthWidth": "1,863 mm / 695 mm",
+      "engine": "single cylinder, 4 strokes, 3 valves",
+      "primarycolor": "acd7c2",
+      "fiture": [
+        {
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Classic-LCD-Dashboard.jpg",
+          "fitur": "Classic LCD Dashboard"
+        },
+        {
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/LED-Front-Lamp.jpg",
+          "fitur": "LED Front Lamp"
+        },
+        {
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Edge-Shield-in-Light-Grey.jpg",
+          "fitur": "Edge Shield in Light Grey"
+        },
+        {
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/Saddle-in-Light-Brown.jpg",
+          "fitur": "Saddle in Light Brown"
+        },
+        {
+          "fiturimg": "https://vespa.co.id/assets/img/vespa-primavera/primavera/USB-Port.jpg",
+          "fitur": "USB Port"
+        }
+      ]
+    },
     {
       "tipe": "Primavera",
       "name": "VESPA PRIMAVERA S 150 I-GET ABS",
@@ -786,6 +593,5 @@
         }
       ]
     }
-
   ]
 }

@@ -9,7 +9,9 @@ import 'package:iconify_flutter/icons/iconoir.dart';
 import 'package:iconify_flutter/icons/heroicons_solid.dart';
 import 'package:iconify_flutter/icons/arcticons.dart';
 import 'package:vespa/UI/Outlet/outletPage.dart';
+import 'package:vespa/features/auth/repository/authentication_repository.dart';
 import 'package:vespa/widget/cart_list.dart';
+import 'package:iconify_flutter/icons/material_symbols.dart';
 
 class NavigationDrawer extends StatefulWidget {
   const NavigationDrawer({Key? key}) : super(key: key);
@@ -38,7 +40,10 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
             Container(
               color: Color.fromRGBO(109, 203, 176, 1),
               child: ExpansionTile(
-                leading: Iconify(Arcticons.bookcatalogue, color: Colors.white,),
+                leading: Iconify(
+                  Arcticons.bookcatalogue,
+                  color: Colors.white,
+                ),
                 title: Text(
                   "Catalogue",
                   style: TextStyle(fontSize: 16, color: Colors.white),
@@ -55,8 +60,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                       icon: Mdi.racing_helmet,
                       iconColor: Colors.white,
                       size: 14,
-                      onClicked: () => SelectedItem(context, int, 4)
-                  )
+                      onClicked: () => SelectedItem(context, int, 4))
                 ],
               ),
             ),
@@ -74,6 +78,15 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
               text: "Outlet",
               onClicked: () => SelectedItem(context, int, 3),
             ),
+            MenuItem(
+              icon: MaterialSymbols.logout,
+              iconColor: Colors.white,
+              size: 16,
+              text: "Logout",
+              onClicked: () {
+                AuthenticationRepository.instance.logout();
+              },
+            )
           ],
         ),
       ),
@@ -84,7 +97,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
 Widget MenuItem(
     {required String text,
     required String icon,
-      required Color iconColor,
+    required Color iconColor,
     required double size,
     VoidCallback? onClicked}) {
   final color = Colors.black;
@@ -92,7 +105,10 @@ Widget MenuItem(
 
   return ListTile(
     tileColor: boxColor,
-    leading: Iconify(icon, color: iconColor,),
+    leading: Iconify(
+      icon,
+      color: iconColor,
+    ),
     title: Text(
       text,
       style: TextStyle(color: Colors.white, fontSize: size),

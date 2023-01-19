@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "932814921092",
+    "project_id": "vespa-as",
+    "storage_bucket": "vespa-as.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:932814921092:android:30af69c336811bb41591d1",
+        "android_client_info": {
+          "package_name": "com.example.vespa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "932814921092-4amrrs4sovb9tns9m7a7jn6o90m6964q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4ZTRbKiefzobWGnd1KfnC7ogSiQZxMHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "932814921092-4amrrs4sovb9tns9m7a7jn6o90m6964q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

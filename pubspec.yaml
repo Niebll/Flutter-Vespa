@@ -45,6 +45,9 @@ dependencies:
   iconify_flutter:
   sqflite:
   configurable_expansion_tile_null_safety:
+  firebase_core: ^2.4.1
+  get:
+  firebase_auth: ^4.2.5
 
 dev_dependencies:
   flutter_test:
@@ -84,6 +87,7 @@ flutter:
     - assets/images/Logo_Scooterin.png
     - assets/images/mapsss.png
     - assets/images/profile.jpg
+    - assets/images/
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
