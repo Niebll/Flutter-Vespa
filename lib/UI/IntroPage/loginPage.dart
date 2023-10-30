@@ -4,6 +4,7 @@ import 'package:vespa/UI/Homepage/homepage.dart';
 import 'package:get/get.dart';
 import 'package:vespa/UI/IntroPage/registerPage.dart';
 import 'package:vespa/features/auth/controllers/login_controlller.dart';
+import 'package:vespa/features/auth/repository/authentication_repository.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
@@ -13,8 +14,6 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
-  TextEditingController ctrusername = new TextEditingController();
-  TextEditingController ctrpassword = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(LoginController());
@@ -93,6 +92,23 @@ class _LoginpageState extends State<Loginpage> {
                       onTap: () {
                         if (_formKey.currentState!.validate()) {
                           LoginController. instance.loginUser(controller.email.text.trim(), controller.password.text.trim());
+                          // _formKey.currentState!.save();
+                          // AuthenticationRepository()
+                          // .loginUserWithEmailAndPassword(email: controller.email.text, password: controller.password.text)
+                          //     .then((ok) {
+                          //   if (ok == null) {
+                          //     Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Homepage(),), (route) => false);
+                          //   } else {
+                          //     ScaffoldMessenger.of(context)
+                          //         .showSnackBar(SnackBar(
+                          //       content: Text(
+                          //         ok,
+                          //         style: TextStyle(fontSize: 16),
+                          //       ),
+                          //     ));
+                          //   }
+                          // });
+
                         }
                       },
                       child: Container(

@@ -2,10 +2,11 @@ import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/UI/Catalogue/catalogueAksesoris.dart';
+import 'package:vespa/UI/ProfilePage/profilepage.dart';
 import 'package:vespa/widget/aksesorisList.dart';
 import 'package:vespa/widget/gtsVespasList.dart';
 import 'package:vespa/widget/limitedVespaList.dart';
-import 'package:vespa/widget/navigationDrawer.dart';
+import 'package:vespa/widget/navigationDrawer.dart' as drawer;
 import 'package:vespa/widget/primaveraVespasList.dart';
 import 'package:vespa/widget/sprintVespaList.dart';
 
@@ -21,12 +22,24 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
     return Scaffold(
-      drawer: NavigationDrawer(),
+      drawer: drawer.NavigationDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         shadowColor: Colors.transparent,
         backgroundColor: Colors.white,
-        actions: [Image.asset("assets/images/vespa_logo.jpg")],
+        actions: [
+          GestureDetector(
+            child: Container(
+              clipBehavior: Clip.antiAlias,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50)),
+                child: Image.asset("assets/images/profile.jpg")),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
+          )
+        ],
         title: Text(
           "Welcome",
           style: GoogleFonts.bebasNeue(letterSpacing: 5, color: Colors.black),
@@ -136,13 +149,13 @@ class _HomepageState extends State<Homepage> with TickerProviderStateMixin {
                   ),
                   Spacer(),
                   GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CatalogueAksesoris(),
-                        ));
-                  },
+                    onTap: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CatalogueAksesoris(),
+                          ));
+                    },
                     child: Text(
                       "View More",
                       style: TextStyle(color: Colors.grey),

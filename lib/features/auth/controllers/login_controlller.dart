@@ -16,7 +16,7 @@ class LoginController extends GetxController {
 
   //Call this Function from Design & it will do the rest
    void loginUser(String email, String password) async{
-    String? error =  await AuthenticationRepository.instance.loginUserWithEmailAndPassword(email, password);
+    String? error =  await AuthenticationRepository.instance.loginUserWithEmailAndPassword(email: email, password: password);
     if(error != null) {
       Get.showSnackbar(GetSnackBar(message: error.toString(),));
     }

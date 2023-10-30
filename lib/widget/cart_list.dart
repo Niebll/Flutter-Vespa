@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/Sqflite/cart_vespa.dart';
 import 'package:vespa/Sqflite/database_helper.dart';
 import 'HexColor.dart';
-import 'navigationDrawer.dart';
+import 'navigationDrawer.dart' as drawer;
 
 class CartList extends StatefulWidget {
   const CartList({Key? key}) : super(key: key);
@@ -77,7 +77,7 @@ class _CartListState extends State<CartList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavigationDrawer(),
+        drawer: drawer.NavigationDrawer(),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
           shadowColor: Colors.transparent,

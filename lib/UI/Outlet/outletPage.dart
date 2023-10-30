@@ -4,7 +4,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import '../../widget/Colors/colors.dart';
-import '../../widget/navigationDrawer.dart';
+import '../../widget/navigationDrawer.dart' as drawer;
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/mdi.dart';
 import 'package:iconify_flutter/icons/uil.dart';
@@ -26,7 +26,7 @@ class _OutletPageState extends State<OutletPage> {
     final paneHeightClosed = MediaQuery.of(context).size.height * 0.58;
     final paneHeightOpen = MediaQuery.of(context).size.height * 1;
     return Scaffold(
-        drawer: NavigationDrawer(),
+        drawer: drawer.NavigationDrawer(),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
           shadowColor: Colors.transparent,

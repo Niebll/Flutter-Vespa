@@ -16,120 +16,124 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: MainColor()),
-        shadowColor: Colors.transparent,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-          onPressed: () => Navigator.of(context).pop(),
-          icon: Icon(Icons.arrow_back_ios),
-          color: Color.fromRGBO(109, 203, 176, 1),
-        ),
-        title: Text(
-          "Account",
-          style: GoogleFonts.bebasNeue(letterSpacing: 5, color: Colors.black),
-        ),
-        centerTitle: true,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height / 5,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Center(
-                      child: Container(
-                        width: MediaQuery.of(context).size.width / 2.6,
-                        child: ClipRRect(
-                          borderRadius: new BorderRadius.circular(100),
-                          child: Image(
-                            fit: BoxFit.fill,
-                            image: AssetImage('assets/images/profile.jpg'),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Center(
-                      child: Container(
-                        width: 2,
-                        color: Colors.black,
-                        height: MediaQuery.of(context).size.height / 10,
-                      ),
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 4,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
+    return MediaQuery.of(context).size.width < 600
+        ? Scaffold(
+            backgroundColor: Colors.white,
+            appBar: AppBar(
+              iconTheme: IconThemeData(color: MainColor()),
+              shadowColor: Colors.transparent,
+              backgroundColor: Colors.white,
+              leading: IconButton(
+                onPressed: () => Navigator.of(context).pop(),
+                icon: Icon(Icons.arrow_back_ios),
+                color: Color.fromRGBO(109, 203, 176, 1),
+              ),
+              title: Text(
+                "Account",
+                style: GoogleFonts.bebasNeue(
+                    letterSpacing: 5, color: Colors.black),
+              ),
+              centerTitle: true,
+            ),
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Container(
+                      height: MediaQuery.of(context).size.height / 5,
+                      child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [Text("Joined"), Text("1 Month")],
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Center(
+                            child: Container(
+                              width: MediaQuery.of(context).size.width / 2.6,
+                              child: ClipRRect(
+                                borderRadius: new BorderRadius.circular(100),
+                                child: Image(
+                                  fit: BoxFit.fill,
+                                  image:
+                                      AssetImage('assets/images/profile.jpg'),
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width / 4,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [Text("Joined",), Text("1 Month",style: TextStyle(
+                                fontWeight: FontWeight.w500
+                              ),)],
+                            ),
+                          )
+                        ],
                       ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              "Nabil",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Text(
-              "Rajankanz",
-              style: TextStyle(fontSize: 30),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Info(icon: IconParkOutline.people, text: "Nabil Rajankanz"),
-          Info(
-              icon: Ic.sharp_alternate_email, text: "nabilrajankanz@gmail.com"),
-          Info(icon: Ic.baseline_local_phone, text: "0812-5123-6543"),
-          Spacer(),
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Container(
-              padding: EdgeInsets.only(left: 10, ),
-              height: 60,
-              width: MediaQuery.of(context).size.width / 2.2,
-              decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.3),
-                  borderRadius: BorderRadius.circular(15)),
-              child: Row(
-                children: [
-                  Iconify(
-                    Carbon.logout,
-                    color: Colors.pink,
+                    ),
                   ),
-                  SizedBox(width: 20,),
-                  Text("Sign Out", style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
-                  ),)
-
-                ],
-              ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    "Nabil",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Text(
+                    "Rajankanz",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Info(icon: IconParkOutline.people, text: "Nabil Rajankanz"),
+                Info(
+                    icon: Ic.sharp_alternate_email,
+                    text: "nabilrajankanz@gmail.com"),
+                Info(icon: Ic.baseline_local_phone, text: "0812-5123-6543"),
+                Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      left: 10,
+                    ),
+                    height: 60,
+                    width: MediaQuery.of(context).size.width / 2.2,
+                    decoration: BoxDecoration(
+                        color: Colors.grey.withOpacity(0.3),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Row(
+                      children: [
+                        Iconify(
+                          Carbon.logout,
+                          color: Colors.pink,
+                        ),
+                        SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          "Sign Out",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 20),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 20,
+                ),
+              ],
             ),
-          ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 20,
-          ),
-        ],
-      ),
-    );
+          )
+        : tabletmode(context);
   }
 }
 
@@ -161,6 +165,108 @@ Widget Info({
           ),
         )
       ],
+    ),
+  );
+}
+
+//make tablet mode
+Widget tabletmode(context) {
+  return Scaffold(
+    backgroundColor: Colors.white,
+    appBar: AppBar(
+      iconTheme: IconThemeData(color: MainColor()),
+      shadowColor: Colors.transparent,
+      backgroundColor: Colors.white,
+      leading: IconButton(
+        onPressed: () => Navigator.of(context).pop(),
+        icon: Icon(Icons.arrow_back_ios),
+        color: Color.fromRGBO(109, 203, 176, 1),
+      ),
+      title: Text(
+        "Account",
+        style: GoogleFonts.bebasNeue(letterSpacing: 5, color: Colors.black),
+      ),
+      centerTitle: true,
+      actions: [
+        //make icon signout
+        Padding(
+          padding: const EdgeInsets.only(right: 20.0),
+          child: Container(
+            padding: EdgeInsets.only(
+              left: 10,
+            ),
+            height: 60,
+            width: 40,
+            decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.3),
+                borderRadius: BorderRadius.circular(10)),
+            child: Row(
+              children: [
+                Iconify(
+                  Carbon.logout,
+                  color: Colors.pink,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+    body: SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              height: 100,
+              child: ClipRRect(
+                borderRadius: new BorderRadius.circular(100),
+                child: Image(
+                  fit: BoxFit.fill,
+                  image: AssetImage('assets/images/profile.jpg'),
+                ),
+              ),
+            ),
+          ),
+          Center(
+            child: Text(
+              "Nabil",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+            ),
+          ),
+          Center(
+            child: Text(
+              "Rajankanz",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
+            child: Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Joined",
+                    style: TextStyle(fontSize: 18),
+                  ),
+                  Text(
+                    "1 Month",
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                  )
+                ],
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Info(icon: IconParkOutline.people, text: "Nabil Rajankanz"),
+          Info(
+              icon: Ic.sharp_alternate_email, text: "nabilrajankanz@gmail.com"),
+          Info(icon: Ic.baseline_local_phone, text: "0812-5123-6543"),
+        ],
+      ),
     ),
   );
 }

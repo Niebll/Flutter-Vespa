@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/Model/allVespaModel.dart';
 import 'package:vespa/UI/BuyingPage/payment.dart';
 import 'package:vespa/UI/DetailPage/detailVespaAll.dart';
-import 'package:vespa/widget/navigationDrawer.dart';
+import 'package:vespa/widget/navigationDrawer.dart'as drawer;
 
 import '../../widget/HexColor.dart';
 
@@ -24,7 +24,7 @@ class _CatalogueVespaState extends State<CatalogueVespa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavigationDrawer(),
+        drawer: drawer.NavigationDrawer(),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
           shadowColor: Colors.transparent,

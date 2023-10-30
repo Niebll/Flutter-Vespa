@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vespa/Model/aksesorisModel.dart';
 
-import '../../widget/HexColor.dart';
-import '../../widget/navigationDrawer.dart';
+import '../../widget/navigationDrawer.dart' as drawer;
 import '../DetailPage/detailAksesoris.dart';
 
 class CatalogueAksesoris extends StatefulWidget {
@@ -27,7 +26,7 @@ class _CatalogueAksesorisState extends State<CatalogueAksesoris> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        drawer: NavigationDrawer(),
+        drawer: drawer.NavigationDrawer(),
         appBar: AppBar(
           iconTheme: IconThemeData(color: Colors.black),
           shadowColor: Colors.transparent,

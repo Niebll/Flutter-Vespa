@@ -102,8 +102,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
                             AuthenticationRepository()
                                 .createUserWithEmailAndPassword(controller.email.text.trim(), controller.password.text.trim())
-                                .then((result) {
-                              if (result == null) {
+                                .then((ok) {
+                              if (ok == null) {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
@@ -112,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(SnackBar(
                                   content: Text(
-                                    result,
+                                    ok,
                                     style: TextStyle(fontSize: 16),
                                   ),
                                 ));

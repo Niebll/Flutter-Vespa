@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
 import 'package:vespa/UI/Homepage/homepage.dart';
@@ -43,10 +44,14 @@ class AuthenticationRepository extends GetxController {
   }
 
   Future<String?> loginUserWithEmailAndPassword(
-      String email, String password) async {
+      {required String email, required String password}) async {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } on FirebaseAuthException catch (e) {
+      switch (e.code){
+        // case 'user-not-found':
+
+      }
     } catch (_) {}
   }
 
